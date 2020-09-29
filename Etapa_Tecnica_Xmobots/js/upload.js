@@ -2,27 +2,30 @@
 var latMarcador = [];
 var longMarcador = [];
 
+// Vai Carregar no Onload() do body
 function init(){
+    // Adiciona escuta de evento change
     document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+
   //Evento de selecionar o arquivo
   function handleFileSelect(event){
-    const reader = new FileReader()
+    const reader = new FileReader() //
     reader.onload = handleFileLoad; // quando carregar, chama o evendo FileLoad
-    reader.readAsText(event.target.files[0]) 
+    reader.readAsText(event.target.files[0])  // cria o atributo result com o texto
   }
   
   function handleFileLoad(event){
           var conteudoArquivo = event.target.result; //se tiver texto no arquivo
       try {
-          var conteudoArquivoObj = JSON.parse(conteudoArquivo);
-      } catch (err) {  // Se o conteúdo não for JSON, dará o window alert ao invés de mostrar apenas no console
+          var conteudoArquivoObj = JSON.parse(conteudoArquivo); //Vai tratar o arquivo
+      } catch (err) {  // Se o conteúdo não for JSON, dará o window.alert em vez de mostrar apenas no console
           alert("Erro ao importar o arquivo: \n\n"+err);
-          return; //return para não seguir executando outros códigos
+          return; //return para não seguir executando o restante dos códigos
       } 
     var arrayConteudo = conteudoArquivoObj["aerodromes"];
     var tabela = document.querySelector('#conteudo_tabela');
-    var coordenadas = []; // criada para tratar mais embaixo a lat/long
-    for (i = 0; i < arrayConteudo.length; i++){
+    var coordenadas = []; // criada para tratar valor de lat/long mais embaixo
+     for (i = 0; i < arrayConteudo.length; i++){
         var row = tabela.insertRow(i); //funcão que automatiza criação de linhas da tabela
         var linha = arrayConteudo[i]; 
         const objectArray = Object.entries(linha); // = acessar o Objeto para poder quebrar em chave/valor
@@ -34,19 +37,17 @@ function init(){
                 var strQuebra = quebraString(value);// selecionar apenas as coordenadas para tratar cada uma
                 coordenadas.push(strQuebra); 
                 celula.innerHTML = strQuebra;     
-            }if (key == 'runways'){ // if para tratar apenas o campo description e
+            } else if (key == 'runways'){ // if para tratar apenas o campo runways e pegar apenas o valor do comprimento
                 var qtdPista = value.length;
                 celula.innerHTML = qtdPista;  
                 console.log(qtdPista);
-                debugger;
-            } else {
+            }  
+            else {
             celula.innerHTML = value;
             }
             coluna++;
-        //    debugger;
       });
      }
-    //console.log(coordenadas)
     
     lat = trataCoordLat(coordenadas);
     long = trataCoordLong(coordenadas);

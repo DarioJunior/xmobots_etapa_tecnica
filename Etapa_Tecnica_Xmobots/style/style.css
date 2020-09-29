@@ -29,19 +29,19 @@ aside {
 }
 
 th.prim {
-    padding-left: 3em;
-}
-th.seg {
-    padding-left: 2.5em;
-}
-th.terc {
     padding-left: 8em;
 }
+th.seg {
+    padding-left: 8em;
+}
+th.terc {
+    padding-left: 1.8em;
+}
 th.quar {
-    padding-left: 7.5em;
+    padding-left: 1em;
 }
 th.quin {
-    padding-left: 0.8em;
+    padding-left: 0em;
 }
 
 tr {
@@ -50,7 +50,7 @@ tr {
 td {
     text-align: center;
     border: 1px solid black;
-    min-width: 5em;
+    min-width: 6.5em;
 }
 
 #mapid {
