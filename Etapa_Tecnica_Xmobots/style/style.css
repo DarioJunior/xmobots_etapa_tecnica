@@ -1,0 +1,187 @@
+body {
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header {
+	position: absolute; top: 0; bottom: 0; width: 100%; 
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 5em;
+    background-color: yellow;   
+    background-image: url("../media/background-header.png");
+    box-shadow: 0px 1px 10px grey;
+}
+h1 {
+    text-align: center;
+    color: white; 
+}
+
+aside {
+    margin-top: 5em;
+    position: absolute;
+    background-repeat: repeat-x;
+    display: inline;
+    width: 20em;
+    height: 91%;
+    background-image: url("../media/background-aside.png");
+    background-color: rgb(183, 212, 65);
+}
+
+th.prim {
+    padding-left: 3em;
+}
+th.seg {
+    padding-left: 2.5em;
+}
+th.terc {
+    padding-left: 8em;
+}
+th.quar {
+    padding-left: 7.5em;
+}
+th.quin {
+    padding-left: 0.8em;
+}
+
+tr {
+    border: 1px solid black;
+}
+td {
+    text-align: center;
+    border: 1px solid black;
+    min-width: 5em;
+}
+
+#mapid {
+    height: 100%;
+    z-index: -1;
+    position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; 
+  }
+
+  #main-cadastro {
+      box-shadow: 0px 0px 10px 1px black;
+      border-radius: 30px;
+      background-repeat: repeat-x;
+      text-align: center;
+      margin-top: 8em;
+      margin-left: 35%;
+      width: 30%;
+      height: 40em;
+      background-image: url("../media/background-main-cad.png");
+  }
+
+  #tabledata {
+
+  }
+
+.area-login{
+    box-shadow: 5px;
+    border: 2px solid greenyellow;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 8em;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(199, 199, 199);
+}
+
+.user-image {
+    box-shadow: 1px 1px 20px 2px rgb(46, 46, 46);
+    text-align: center;
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 5%;
+    width: 100px;
+    height: 100px;
+    background-color: indigo;
+}
+
+.unknown-user {
+    width: 100px;
+    height: 100px;
+}
+
+.autenticacao {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.login, .senha {
+    margin-top: 5%;
+}
+.btn-submit {
+    margin-top: 3%;
+}
+
+#user-id {
+    padding: 10px;
+}
+.user-img {
+    box-shadow: 1px 1px 5px 1px rgb(66, 66, 66);
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+}
+
+.user-logged {
+   float: right;
+   padding-top: 25px;
+   padding-right: 50px;
+   font-weight: bolder;
+}
+
+.tit-cad {
+    padding-top: 1em;
+}
+
+.input-cad{
+    background-image: url('../media/backgroud-input-cad.png');
+    text-align: center;
+    width: 80%;
+    height: 2em;
+    border-radius: 15px;
+}
+.cad-username {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+
+}
+.cad-email {
+    padding-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+
+}
+.cad-pass {
+    padding-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+
+}
+
+.label-cad {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.new-cad{
+    background-image: url('../media/backgroud-button-cad.png');
+    font-size: 1.3em;
+    font-weight: bolder;
+    margin-top: 1em;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+}
+
+.warning {
+    font-size: 0.8em;
+    color: red;
+}
+
+.botao_tabela{
+    margin-left: 4em;
+}
+

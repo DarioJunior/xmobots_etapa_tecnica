@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Xmobots</h1>
+        </div>
+    </header>
+    <div id="container">
+        <div id="main-cadastro">
+            <form action="">
+                <h1 class="tit-cad">Cadastro de usuário:</h1>
+
+                <div class="cad-username">
+                    <label class="label-cad" for="">Nome de Usuário:</label><br>
+                    <input id="input_user" class="input-cad" type="text" placeholder="Digite o nome de usuário..."><br>
+                    <p class="warning aviso_user"></p>
+                </div>
+
+                <div class="cad-email">
+                    <label class="label-cad" for="">E-mail</label><br>
+                    <input id="input_email" class="input-cad"type="email" placeholder="Digite o e-mail..."><br>
+                    <p class="warning aviso_email"></p>
+                </div>
+
+                <div class="cad-pass">
+                    <label class="label-cad" for="">Senha:</label><br>
+                    <input id="input_pass" class="input-cad" type="password" placeholder="Digite a senha...">
+                    <p class="warning aviso_pass"></p>
+                </div>
+
+                <div class="cad-confirm-pass">
+                    <label class="label-cad" for="">Confirme a Senha:</label><br>
+                    <input id="input_confirm_pass" class="input-cad" type="password" placeholder="Digite a senha...">
+                    <p class="warning aviso_passConfirm">
+                </div>
+
+                <button id="botao"  class="new-cad">Cadastro</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/cadastro.js"></script>
+</body>
+</html>

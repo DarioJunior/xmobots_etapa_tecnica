@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Menu de Usuário</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<!--------------------------------------------------------------BOOTSTRAPs-------------------------------------------------------------------->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------API DO MAPA--------------------------------------------------------------------->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+
+<link rel="stylesheet" href="../style/style.css">
+<script src="../js/upload.js"></script>
+</head>
+<!-- FUNÇÃO QUE VAI ATIVAR AS "ESCUTAS" DO JS PARA ATIVAR DEMAIS FUNÇÕES-->
+<body onload="init()">
+<header>
+    <div class="header">
+        <h1>Xmobots</h1>
+    </div>
+</header>
+<div class="div-cont">
+    <aside>
+        <div id="user-id">
+            <img class="user-img" src="../media/unknown-user.png" alt="" srcset="">
+            <label class="user-logged" for="user-name"> Olá, Xmobots.</label>
+        </div>
+
+        <div>
+            <input style="width: 98%;" id="fileInput" type="file" name="file" />
+            <pre id="fileContent"></pre>
+        </div>
+        /
+        <!-- Modal para tabela -->
+        <button type="button" class="botao_tabela btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Abrir Tabela</button>
+        <div id="myModal" class=" modal fade" role="dialog">
+            <div class=" modal-dialog modal-lg" >
+                <!-- conteúdo-->
+                <div class="modal-content" >
+                    <div id="tabledata">
+                        <table class="">
+                                <tr>
+                                    <th class="prim">Nome:</th>
+                                    <th class="seg">Cidade:</th>
+                                    <th class="terc"> Descrição/Coordenadas:</th>
+                                    <th class="quar">Data de Criação:</th>
+                                    <th class="quin">Qt. de Pistas:</th>
+                                </tr>
+                        </table>
+                    </div>
+                        <div class="modal-body">
+                            <table id="conteudo_tabela" class="tabela-corpo">
+         
+                            </table>
+                        </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+    </aside>     
+</div>
+<div id="mapid"></div>
+</div>
+<script>
+     var mymap = L.map('mapid').setView([-22.0154, -47.8911], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 20,
+            minZoom:5,
+            //attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            //    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            //    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+</script>
+</body>
+</html>
